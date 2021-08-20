@@ -47,15 +47,12 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
                 "view": [
 ```
 
-### MVP/PostMVP
-
-The functionality will then be divided into two separate lists: MVP and PostMVP.  Carefully decide what is placed into your MVP, as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
 
 
-- Build your API
-- Render data on page 
+- Build my API
+- Render data on a page 
 - Allow user to navigate into all features from Home Page
 - Have clickable functions
 - Add beautiful design/ Images using React-Bootstrap Cards, CSS
@@ -66,7 +63,7 @@ The functionality will then be divided into two separate lists: MVP and PostMVP.
 
 
 - Add Delete button
-- Add opaque effect
+- Add more data to the API
 
 ## Project Schedule
 
