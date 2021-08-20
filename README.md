@@ -22,35 +22,29 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
 {
     "records": [
         {
-            "id": "recONRzIUTuZ5lXaF",
+            "id": "recvAPGi6ZnFSrNOU",
             "fields": {
-                "author": "Liz Yrineo",
-                "setup": "Why did the tomato turn red?",
-                "punchline": "Because it saw the salad dressing!"
+                "name": "Jet Ski Ride",
+                "location": " Liberty State Park, NJ",
+                "stuff": "A boat license and New Jersey Boat Safety Certificate",
+                "status": "Todo",
+                "link": "https://www.seathecity.com/",
+                "budget": "weekdays: $169.00, weekends: $199.0 2nd. passanger - $50.00",
+                "rating": 4
             },
-            "createdTime": "2020-11-30T16:03:09.000Z"
+            "createdTime": "2021-08-19T18:57:28.000Z"
         },
         {
-            "id": "rec3oYZ5Tp0AIDsKe",
+            "id": "rec0rh8ZAVjm6GenX",
             "fields": {
-                "author": "Rachel Moskowitz",
-                "setup": "What did the green grape say to the red grape?",
-                "punchline": "Breathe, idiot, breathe!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        },
-        {
-            "id": "recA34tOaoE1IVeC1",
-            "fields": {
-                "author": "Gary Grant",
-                "setup": "How do you make holy water?",
-                "punchline": "You boil the hell out of it!"
-            },
-            "createdTime": "2020-11-30T16:03:09.000Z"
-        }
-    ],
-    "offset": "recA34tOaoE1IVeC1"
-}
+                "name": "Biking",
+                "stuff": "Your own Bike or Rent",
+                "location": "Anywhere you want",
+                "status": "Todo",
+                "link": "https://bikerentalcentralpark.com/?utm_source=GoogleMyBusiness&utm_medium=1391_6th_Ave",
+                "budget": "starting from $9.00",
+                "rating": 4,
+                "view": [
 ```
 
 ### MVP/PostMVP
