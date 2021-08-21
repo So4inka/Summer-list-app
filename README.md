@@ -1,6 +1,5 @@
-## Project Name
+## Summer List App
 
-Summer List App
 
 ## Project Description
 
@@ -51,13 +50,14 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
 #### MVP 
 
 
-- Build my API
-- Render data on a page 
+- Use Axios to POST/create new data on Airtable.
+- Use Axios to Update to Airtable 
+- Use Axios to consume data from Airtable, and GET/render that data in your components
+- Utilize React Router, installed via NPM
 - Allow user to navigate into all features from Home Page
 - Have clickable functions
 - Add beautiful design/ Images using React-Bootstrap Cards, CSS
-- Have Functioning Form page to Add New Activity
-- Have an option of Edit an activity on the Page with the current activity
+- Deployed via Netlify
 
 #### PostMVP  
 
@@ -88,7 +88,7 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
 | Working on component Home| H | 3hrs| 3.5hrs | 3.5hrs |
 | Working on Component Activities| H | 3hrs| 3.5hrs | 3.5hrs |
 | Add new activity | H | 3hrs| 3.5hrs | 3.5hrs |
-| CSS Cards  | H | 3hrs| 3.5hrs | 3.5hrs |
+| CSS Cards / Use flexbox | H | 3hrs| 3.5hrs | 3.5hrs |
 | Modify /Edit activity | H | 3hrs| 3.5hrs | 3.5hrs |
 | Delete activity | H | 3hrs| 3.5hrs | 3.5hrs |
 | Complete MVP | H | 3hrs| 3.5hrs | 3.5hrs |
