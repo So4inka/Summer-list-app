@@ -96,13 +96,4 @@ Show us a snippet of JSON returned by your Airtable (you can find it under the A
 | Post MVP | H | 3 hrs| 3.5 hrs | 3.5 hrs |
 | Total | H | 33 hrs| 37 hrs | 37 hrs |
 
-## SWOT Analysis
-
-### Strengths:
-
-### Weaknesses:
-
-### Opportunities:
-
-### Threats:
 
