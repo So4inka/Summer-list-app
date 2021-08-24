@@ -1,10 +1,14 @@
-import {useParams} from 'react-router-dom'
-
+import { useParams } from "react-router-dom";
+// import Rating from "./Rating";
 function Activities(props) {
-  const { name } = useParams()
-  const activity = props.activities.find(activity => activity.fields.name === name)
+  const { name } = useParams();
+  const activity = props.activities.find(
+    (activity) => activity.fields.name === name
+  );
 
-  return !activity ? (<h1>Loading...</h1>) : (
+  return !activity ? (
+    <h1>Loading...</h1>
+  ) : (
     <div>
       <h2>{activity.fields.name}</h2>
       <br />
@@ -18,18 +22,8 @@ function Activities(props) {
       <br />
       <p>{activity.fields.rating}</p>
       <br />
-  </div>
-)
+      {/* <Rating rating={rating} /> */}
+    </div>
+  );
 }
-export default Activities
-
-
-
-
-
-
-
-
-
-
-
+export default Activities;

@@ -6,6 +6,7 @@ import "./App.css";
 import Activities from "./Activities";
 import Form from "./Form";
 import { baseUrl, config } from "./services";
+import Navbar from "./components/Navbar";
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -18,7 +19,6 @@ function App() {
       setActivities(resp.data.records);
     };
     fetchActivity();
- 
   }, [toggleFetch]);
 
   return (
@@ -32,6 +32,7 @@ function App() {
         {activities.map((activity) => (
           <Link to={`/activities/${activity.fields.name}`}>
             <h2>{activity.fields.name}</h2>
+            <img src={activity.fields.view} alt="pic" />
           </Link>
         ))}
       </Route>
