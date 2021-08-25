@@ -7,6 +7,7 @@ import Activities from "./Activities";
 import Form from "./Form";
 import { baseUrl, config } from "./services";
 import Navbar from "./components/Navbar";
+import Home from "./Home";
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -23,18 +24,20 @@ function App() {
 
   return (
     <div>
-      <h1> Summer Activities List</h1>
+      {/* <h1> Summer Activities List</h1> */}
       <Link to="/">Home</Link>
       <br />
       <Link to="/new"> Add new Activity</Link>
       <br />
       <Route path="/" exact>
-        {activities.map((activity) => (
+        <h1> Summer Activities List</h1>
+        <Home activities={activities} />
+        {/* {activities.map((activity) => (
           <Link to={`/activities/${activity.fields.name}`}>
             <h2>{activity.fields.name}</h2>
             <img src={activity.fields.view} alt="pic" />
-          </Link>
-        ))}
+          </Link> */}
+        {/* ))} */}
       </Route>
       <Route path="/activities/:name">
         <Activities activities={activities} />

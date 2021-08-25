@@ -8,7 +8,7 @@ function Form(props) {
   const [budget, setBudget] = useState("");
   const [stuff, setStuff] = useState("");
   const [link, setLink] = useState("");
-  const [rating, setRating] = useState("");
+  const [rating, setRating] = useState(1);
   const [view, setView] = useState("");
 
   const handleSubmit = async (e) => {
@@ -20,6 +20,7 @@ function Form(props) {
       stuff,
       link,
       rating,
+      view,
     };
     await axios.post(baseUrl, { fields: newActivity }, config);
     props.setToggleFetch(!props.toggleFetch);
