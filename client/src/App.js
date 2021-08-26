@@ -4,10 +4,10 @@ import axios from "axios";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
 import Activities from "./Activities";
-import Form from "./Form";
+import Form from "./components/Form";
 import { baseUrl, config } from "./services";
 import Navbar from "./components/Navbar";
-import Home from "./Home";
+import Home from "./components/Home";
 
 function App() {
   const [activities, setActivities] = useState([]);
@@ -44,6 +44,13 @@ function App() {
       </Route>
       <Route path="/new">
         <Form toggleFetch={toggleFetch} setToggleFetch={setToggleFetch} />
+      </Route>
+      <Route path="/edit/:name">
+        <Form
+          activities={activities}
+          toggleFetch={toggleFetch}
+          setToggleFetch={setToggleFetch}
+        />
       </Route>
     </div>
   );

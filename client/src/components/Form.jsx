@@ -1,6 +1,7 @@
 import axios from "axios";
-import { useState } from "react";
-import { baseUrl, config } from "./services";
+import { useState, useEffect } from "react";
+import { baseUrl, config } from "../services";
+import { useParams } from "react-router-dom";
 
 function Form(props) {
   const [name, setName] = useState("");
@@ -10,6 +11,25 @@ function Form(props) {
   const [link, setLink] = useState("");
   const [rating, setRating] = useState(1);
   const [view, setView] = useState("");
+
+  const params = useParams();
+
+  useEffect(() => {
+    if (params.name && props.activities.length > 0) {
+      const acitivityToEdit = props.activities.find(
+        (activity) => params.name === activity.fields.name
+      );
+      if (acitivityToEdit) {
+        setName(acitivityToEdit.fields.name);
+        setLocation(acitivityToEdit.fields.location);
+        setBudget(acitivityToEdit.fields.budget);
+        setStuff(acitivityToEdit.fields.stuff);
+        setLink(acitivityToEdit.fields.link);
+        setRating(acitivityToEdit.fields.rating);
+        setView(acitivityToEdit.fields.view);
+      }
+    }
+  }, [params.name, props.acitivities]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -22,7 +42,15 @@ function Form(props) {
       rating,
       view,
     };
-    await axios.post(baseUrl, { fields: newActivity }, config);
+    if (params.name) {
+      await axios.put(
+        `${baseUrl}/${params.name}`,
+        { fields: newActivity },
+        config
+      );
+    } else {
+      await axios.post(baseUrl, { fields: newActivity }, config);
+    }
     props.setToggleFetch(!props.toggleFetch);
   };
   return (

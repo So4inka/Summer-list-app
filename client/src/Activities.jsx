@@ -1,4 +1,5 @@
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
+
 // import Rating from "./Rating";
 function Activities(props) {
   const { name } = useParams();
@@ -23,6 +24,9 @@ function Activities(props) {
       <p>{activity.fields.rating}</p>
       <br />
       {/* <Rating rating={rating} /> */}
+      <Link to={`/edit/${activity.fields.name}`}>
+        <button>Edit</button>
+      </Link>
     </div>
   );
 }
