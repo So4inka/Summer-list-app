@@ -57,84 +57,77 @@ function Form(props) {
   };
   return (
     <div className="parent">
-    <div className="form">
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="name">
-          Name: <br />
-        </label>
-        <input
-          id="name"
-          type="text"
-          value={name}
-          placeholder="Activity Name"
-          onChange={(e) => setName(e.target.value)}
-          autoComplete="off"
-          required
-        />
-        <br /> <br />
-        <label htmlFor="location">Location:</label>
-        <input
-          id="location"
-          text="text"
-          value={location}
-          placeholder="Activity Location"
-          onChange={(e) => setLocation(e.target.value)}
-        />
-        <br /> <br />
-        <label htmlFor="stuff">You'll need:</label>
-        <input
-          id="stuff"
-          type="text"
-          value={stuff}
-          placeholder="Stuff you'll need"
-          onChange={(e) => setStuff(e.target.value)}
-        />
-        <br /> <br />
-        <label htmlFor="budget">Budget:</label>
-        <input
-          id="budget"
-          type="text"
-          value={budget}
-          placeholder="Budget"
-          onChange={(e) => setBudget(e.target.value)}
-        />
-        <br /> <br />
-        <label htmlFor="link">Link:</label>
-        <input
-          id="link"
-          type="url"
-          value={link}
-          placeholder="Link"
-          onChange={(e) => setLink(e.target.value)}
-        />
-        <br /> <br />
-        <label htmlFor="rating">Rating:</label>
-        <input
-          id="rating"
-          type="range"
-          min={1}
-          max={5}
-          value={rating}
-          placeholder="Rating"
-          onChange={(e) => setRating(e.target.valueAsNumber)}
-          required
-        />
-        <br /> <br />
-        <label htmlFor="view">Photo:</label>
-        <input
-          id="view"
-          type="url"
-          value={view}
-          placeholder="View"
-          onChange={(e) => setView(e.target.value)}
-        />
-        <br /> <br />
-        <button type="submit">Add New</button>
-        <br /> <br />
-      </form>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="name">
+            Name: <br />
+          </label>
+          <input
+            id="name"
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            autoComplete="off"
+            required
+          />
+          <br /> <br />
+          <label htmlFor="location">Location:</label>
+          <input
+            id="location"
+            text="text"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+          <br /> <br />
+          <label htmlFor="stuff">You'll need:</label>
+          <input
+            id="stuff"
+            type="text"
+            value={stuff}
+            onChange={(e) => setStuff(e.target.value)}
+          />
+          <br /> <br />
+          <label htmlFor="budget">Budget:</label>
+          <input
+            id="budget"
+            type="text"
+            value={budget}
+            onChange={(e) => setBudget(e.target.value)}
+          />
+          <br /> <br />
+          <label htmlFor="link">Link:</label>
+          <input
+            id="link"
+            type="url"
+            value={link}
+            onChange={(e) => setLink(e.target.value)}
+          />
+          <br /> <br />
+          <label htmlFor="rating">Rating:</label>
+          <input
+            id="rating"
+            type="range"
+            min={1}
+            max={5}
+            value={rating}
+            onChange={(e) => setRating(e.target.valueAsNumber)}
+            required
+          />
+          <br /> <br />
+          <label htmlFor="view">Photo:</label>
+          <input
+            id="view"
+            type="url"
+            value={view}
+            onChange={(e) => setView(e.target.value)}
+          />
+          <br /> <br />
+          <button type="submit">Add New</button>
+          <br /> <br />
+        </form>
+      </div>
       <img className="garfield" src="https://i.imgur.com/uXEdfxc.png" />
-      </div>
-      </div>
+    </div>
   );
 }
 

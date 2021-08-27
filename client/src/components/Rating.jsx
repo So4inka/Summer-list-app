@@ -1,5 +1,5 @@
 function Rating(props) {
-  let starts = "";
+  let stars = "";
   for (let i = 0; i < props.rating; i += 1) {
     stars += "⭐";
   }

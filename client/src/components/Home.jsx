@@ -15,7 +15,7 @@ function Home(props) {
             <Card.Title>{activity.fields.name}</Card.Title>
             <Card.Text>{activity.fields.description}</Card.Text>
             <Link to={`/activities/${activity.id}`}>
-              <Button variant="primary">Let's See</Button>
+              <Button variant="primary">Let's See it!</Button>
             </Link>
           </Card.Body>
         </Card>

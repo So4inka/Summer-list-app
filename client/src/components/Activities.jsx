@@ -1,28 +1,31 @@
 import { useParams, Link } from "react-router-dom";
-// import Rating from "./Rating";
+import Rating from "./Rating";
+import { useState } from "react";
 function Activities(props) {
   const { id } = useParams();
   const activity = props.activities.find((activity) => activity.id === id);
-
+  const [rating, setRating] = useState(1);
   return !activity ? (
     <h1>Loading...</h1>
   ) : (
     <div className="show">
       <h2>{activity.fields.name}</h2>
       <br />
-      <p>{activity.fields.location}</p>
+      <p>Where to? {activity.fields.location}</p>
       <br />
-      <p>{activity.fields.budget}</p>
+      <p>Budget for it: {activity.fields.budget}</p>
       <br />
-      <p>{activity.fields.stuff}</p>
+      <p> What you'll need: {activity.fields.stuff}</p>
       <br />
-      <p>{activity.fields.link}</p>
+      <a href={activity.fields.link}></a>
       <br />
-      <p>{activity.fields.rating}</p>
-      <br />
-      {/* <Rating rating={rating} /> */}
+      {/* <p>{activity.fields.rating}</p>  */}
+       <Rating rating={rating} />
       <Link to={`/edit/${activity.id}`}>
-        <button> Edit   <br /></button>
+        <button>
+          {" "}
+          Edit <br />
+        </button>
       </Link>
     </div>
   );

@@ -3,15 +3,17 @@ import React from "react";
 import axios from "axios";
 import { Route, Link } from "react-router-dom";
 import "./App.css";
-import Activities from "./Activities";
+import Activities from "./components/Activities";
 import Form from "./components/Form";
 import { baseUrl, config } from "./services";
 import Navbar from "./components/Navbar";
 import Home from "./components/Home";
+import Rating from "./components/Rating";
 
 function App() {
   const [activities, setActivities] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(false);
+  const [rating, setRating] = useState(1);
 
   useEffect(() => {
     const fetchActivity = async () => {
@@ -32,7 +34,9 @@ function App() {
         <Home activities={activities} />
       </Route>
       <Route path="/activities/:id">
-        <Activities activities={activities} />
+        <div className="here">
+          <Activities activities={activities} />
+        </div>
       </Route>
       <Route path="/new">
         <Form toggleFetch={toggleFetch} setToggleFetch={setToggleFetch} />
@@ -40,6 +44,7 @@ function App() {
       <Route path="/edit/:id">
         <Form
           activities={activities}
+          rating={rating}
           toggleFetch={toggleFetch}
           setToggleFetch={setToggleFetch}
         />
