@@ -56,9 +56,12 @@ function Form(props) {
     history.push("/");
   };
   return (
+    <div className="parent">
     <div className="form">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name: <br /></label> 
+        <label htmlFor="name">
+          Name: <br />
+        </label>
         <input
           id="name"
           type="text"
@@ -129,7 +132,9 @@ function Form(props) {
         <button type="submit">Add New</button>
         <br /> <br />
       </form>
-    </div>
+      <img className="garfield" src="https://i.imgur.com/uXEdfxc.png" />
+      </div>
+      </div>
   );
 }
 
