@@ -24,34 +24,30 @@ function App() {
 
   return (
     <div>
-      {/* <h1> Summer Activities List</h1> */}
-      <Link to="/">Home</Link>
-      <br />
-      <Link to="/new"> Add new Activity</Link>
-      <br />
+      <Navbar />
       <Route path="/" exact>
-        <h1> Summer Activities List</h1>
+        <section className="head">
+          <h1> Summer Fun List</h1>
+          </section>
         <Home activities={activities} />
-        {/* {activities.map((activity) => (
-          <Link to={`/activities/${activity.fields.name}`}>
-            <h2>{activity.fields.name}</h2>
-            <img src={activity.fields.view} alt="pic" />
-          </Link> */}
-        {/* ))} */}
       </Route>
-      <Route path="/activities/:name">
+      <Route path="/activities/:id">
         <Activities activities={activities} />
       </Route>
       <Route path="/new">
         <Form toggleFetch={toggleFetch} setToggleFetch={setToggleFetch} />
       </Route>
-      <Route path="/edit/:name">
+      <Route path="/edit/:id">
         <Form
           activities={activities}
           toggleFetch={toggleFetch}
           setToggleFetch={setToggleFetch}
         />
       </Route>
+      <footer>
+        <img src="https://res.cloudinary.com/briandanger/image/upload/v1568954107/github_fpykxh.png" />
+        <img src=" https://res.cloudinary.com/briandanger/image/upload/v1568954107/linkedin_vnvo6s.png" />
+      </footer>
     </div>
   );
 }

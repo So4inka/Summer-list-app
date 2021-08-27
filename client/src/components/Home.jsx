@@ -9,7 +9,7 @@ function Home(props) {
       {activities.map((activity) => (
         // <Link to={`/activities/${activity.fields.name}`}>
 
-        <Card style={{ width: "18rem" }}>
+        <Card style={{ width: "20rem" }}>
           <Card.Img variant="top" src={activity.fields.view} />
           <Card.Body>
             <Card.Title>{activity.fields.name}</Card.Title>
@@ -17,7 +17,7 @@ function Home(props) {
               Some quick example text to build on the card title and make up the
               bulk of the card's content.
             </Card.Text>
-            <Link to={`/activities/${activity.fields.name}`}>
+            <Link to={`/activities/${activity.id}`}>
               <Button variant="primary">Let's See</Button>
             </Link>
           </Card.Body>

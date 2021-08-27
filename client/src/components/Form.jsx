@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { baseUrl, config } from "../services";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 
 function Form(props) {
   const [name, setName] = useState("");
@@ -13,11 +13,12 @@ function Form(props) {
   const [view, setView] = useState("");
 
   const params = useParams();
+  let history = useHistory();
 
   useEffect(() => {
-    if (params.name && props.activities.length > 0) {
+    if (params.id && props.activities.length > 0) {
       const acitivityToEdit = props.activities.find(
-        (activity) => params.name === activity.fields.name
+        (activity) => params.id === activity.id
       );
       if (acitivityToEdit) {
         setName(acitivityToEdit.fields.name);
@@ -29,7 +30,7 @@ function Form(props) {
         setView(acitivityToEdit.fields.view);
       }
     }
-  }, [params.name, props.acitivities]);
+  }, [params.id, props.acitivities]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -42,9 +43,9 @@ function Form(props) {
       rating,
       view,
     };
-    if (params.name) {
+    if (params.id) {
       await axios.put(
-        `${baseUrl}/${params.name}`,
+        `${baseUrl}/${params.id}`,
         { fields: newActivity },
         config
       );
@@ -52,11 +53,12 @@ function Form(props) {
       await axios.post(baseUrl, { fields: newActivity }, config);
     }
     props.setToggleFetch(!props.toggleFetch);
+    history.push("/");
   };
   return (
-    <div>
+    <div className="form">
       <form onSubmit={handleSubmit}>
-        <label htmlFor="name">Name:</label>
+        <label htmlFor="name">Name: <br /></label> 
         <input
           id="name"
           type="text"
@@ -66,6 +68,7 @@ function Form(props) {
           autoComplete="off"
           required
         />
+        <br /> <br />
         <label htmlFor="location">Location:</label>
         <input
           id="location"
@@ -74,6 +77,7 @@ function Form(props) {
           placeholder="Activity Location"
           onChange={(e) => setLocation(e.target.value)}
         />
+        <br /> <br />
         <label htmlFor="stuff">You'll need:</label>
         <input
           id="stuff"
@@ -82,6 +86,7 @@ function Form(props) {
           placeholder="Stuff you'll need"
           onChange={(e) => setStuff(e.target.value)}
         />
+        <br /> <br />
         <label htmlFor="budget">Budget:</label>
         <input
           id="budget"
@@ -90,6 +95,7 @@ function Form(props) {
           placeholder="Budget"
           onChange={(e) => setBudget(e.target.value)}
         />
+        <br /> <br />
         <label htmlFor="link">Link:</label>
         <input
           id="link"
@@ -98,6 +104,7 @@ function Form(props) {
           placeholder="Link"
           onChange={(e) => setLink(e.target.value)}
         />
+        <br /> <br />
         <label htmlFor="rating">Rating:</label>
         <input
           id="rating"
@@ -109,6 +116,7 @@ function Form(props) {
           onChange={(e) => setRating(e.target.valueAsNumber)}
           required
         />
+        <br /> <br />
         <label htmlFor="view">Photo:</label>
         <input
           id="view"
@@ -117,8 +125,9 @@ function Form(props) {
           placeholder="View"
           onChange={(e) => setView(e.target.value)}
         />
-
+        <br /> <br />
         <button type="submit">Add New</button>
+        <br /> <br />
       </form>
     </div>
   );

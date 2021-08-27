@@ -1,16 +1,13 @@
 import { useParams, Link } from "react-router-dom";
-
 // import Rating from "./Rating";
 function Activities(props) {
-  const { name } = useParams();
-  const activity = props.activities.find(
-    (activity) => activity.fields.name === name
-  );
+  const { id } = useParams();
+  const activity = props.activities.find((activity) => activity.id === id);
 
   return !activity ? (
     <h1>Loading...</h1>
   ) : (
-    <div>
+    <div className="show">
       <h2>{activity.fields.name}</h2>
       <br />
       <p>{activity.fields.location}</p>
@@ -24,8 +21,8 @@ function Activities(props) {
       <p>{activity.fields.rating}</p>
       <br />
       {/* <Rating rating={rating} /> */}
-      <Link to={`/edit/${activity.fields.name}`}>
-        <button>Edit</button>
+      <Link to={`/edit/${activity.id}`}>
+        <button> Edit   <br /></button>
       </Link>
     </div>
   );

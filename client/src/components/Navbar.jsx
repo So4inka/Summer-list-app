@@ -1,12 +1,11 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function Navbar() {
   return (
-    <nav>
+    <nav className="header">
       <Link to="/">Home</Link>
       <Link to="/new"> Add new Activity</Link>
-  </nav>
-
-)
+    </nav>
+  );
 }
 export default Navbar;
