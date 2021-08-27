@@ -28,7 +28,7 @@ function App() {
       <Route path="/" exact>
         <section className="head">
           <h1> Summer Fun List</h1>
-          </section>
+        </section>
         <Home activities={activities} />
       </Route>
       <Route path="/activities/:id">
@@ -44,9 +44,19 @@ function App() {
           setToggleFetch={setToggleFetch}
         />
       </Route>
-      <footer>
-        <img src="https://res.cloudinary.com/briandanger/image/upload/v1568954107/github_fpykxh.png" />
-        <img src=" https://res.cloudinary.com/briandanger/image/upload/v1568954107/linkedin_vnvo6s.png" />
+      <footer className="footer">
+        <a href="https://github.com/So4inka">
+          <img src="https://res.cloudinary.com/briandanger/image/upload/v1568954107/github_fpykxh.png" />
+        </a>
+        <a href="https://www.linkedin.com/in/nadezda-kallaur-65444a85/">
+          <img src="https://i.imgur.com/bj7hAbc.png" />
+        </a>
+        <a href="https://www.instagram.com/nadia_kallaur/">
+          <img src="https://i.imgur.com/OZawu9A.png" />
+        </a>
+        <a href="https://www.facebook.com/nadune4ka/">
+          <img src="https://i.imgur.com/AmFK9On.png" />
+        </a>
       </footer>
     </div>
   );

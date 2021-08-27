@@ -13,10 +13,7 @@ function Home(props) {
           <Card.Img variant="top" src={activity.fields.view} />
           <Card.Body>
             <Card.Title>{activity.fields.name}</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
+            <Card.Text>{activity.fields.description}</Card.Text>
             <Link to={`/activities/${activity.id}`}>
               <Button variant="primary">Let's See</Button>
             </Link>
